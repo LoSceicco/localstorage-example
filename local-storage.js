@@ -26,18 +26,15 @@ button.addEventListener('click', function (event) {
   const cognome = document.querySelector('input[name="cognome"]');
 
   const currentData = JSON.parse(localStorage.getItem(dataKey));
-
+  const newItem = {
+    nome: nome.value,
+    cognome: cognome.value,
+  };
   if (currentData && currentData.length) {
-    currentData.push({
-      nome: nome.value,
-      cognome: cognome.value,
-    });
+    currentData.push(newItem);
     localStorage.setItem(dataKey, JSON.stringify(currentData));
   } else {
-    const data = [{
-      nome: nome.value,
-      cognome: cognome.value
-    }];
+    const data = [newItem];
     localStorage.setItem(dataKey, JSON.stringify(data));
   }
   drawTable();
