@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>local storage</title>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .top {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        background: #2196f3;
+      }
+      table {
+        width: 80%;
+        margin: 0 10%;
+        padding-top: 20px;
+      }
+      td {
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top">
+      <div>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" />
+      </div>
+
+      <div>
+        <label for="cognome">Cognome</label>
+        <input type="text" name="cognome" />
+      </div>
+
+      <button id="add">+</button>
+    </div>
+
+    <div style="display: flex; justify-content: center">
+      <button onclick="deleteAll()">cancella tutto</button>
+    </div>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Nome</th>
+          <th>Cognome</th>
+        </tr>
+      </tbody>
+      <tbody id="mytable"></tbody>
+    </table>
+
+    <script src="./local-storage.js"></script>
+  </body>
+</html>
